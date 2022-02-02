@@ -180,7 +180,7 @@ class RenderPicture extends RenderBox {
   final LayerHandle<PictureLayer> _pictureHandle = LayerHandle<PictureLayer>();
 
   void _addPicture(PaintingContext context, Offset offset) {
-    assert(picture != null);
+    assert(picture != null && picture?.picture != null);
     assert(_pictureHandle.layer != null);
     if (allowDrawingOutsideViewBox != true) {
       final Rect viewportRect = Offset.zero & _picture!.viewport.size;
